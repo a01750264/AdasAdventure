@@ -29,4 +29,31 @@ public class Menu : MonoBehaviour
         // Cambiar escena
         SceneManager.LoadScene("EscenaJuego");
     }
+
+    public void Configuracion()
+    {
+        // Cambiar escena
+        //print(message:"Click al boton");
+
+        // Cambiar escena
+        SceneManager.LoadScene("EscenaConfiguracion");
+    }
+
+    public void Ayuda()
+    {
+        // Cambiar escena
+        //print(message:"Click al boton");
+
+        // Cambiar escena
+        SceneManager.LoadScene("EscenaAyuda");
+    }
+
+    public void Creditos()
+    {
+        // Cambiar escena
+        //print(message:"Click al boton");
+
+        // Cambiar escena
+        SceneManager.LoadScene("EscenaCreditos");
+    }
 }
