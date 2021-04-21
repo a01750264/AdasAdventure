@@ -176,3 +176,42 @@ Received Import Request.
 Start importing Assets/TWD/FreeButtonSet/Textures/controls/toggle_bg_50.png using Guid(bd38c9e672875e046aaf4d5369356d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b4ef29ba35fe87fea8e5c6d6fdeed25') in 0.017880 seconds
   Import took 0.024898 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002096 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.729 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1807 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.8 MB.
+System memory in use after: 87.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2289.
+Total: 5.928000 ms (FindLiveObjects: 0.496200 ms CreateObjectMapping: 0.171500 ms MarkObjects: 5.176000 ms  DeleteObjects: 0.080000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 464.235881 seconds.
+  path: Assets/Resources/blank_skin.guiskin
+  artifactKey: Guid(a2848a11196e7874eb9c9419b74e7a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/blank_skin.guiskin using Guid(a2848a11196e7874eb9c9419b74e7a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86a7fc536948eaa5ae96e20811b6865a') in 0.039019 seconds
+  Import took 0.045122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000660 seconds.
+  path: Assets/Resources/mat_blue.mat
+  artifactKey: Guid(6e04a6899016a4849b9efa2f02ce92fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/mat_blue.mat using Guid(6e04a6899016a4849b9efa2f02ce92fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e12056a46b6ccc72daa13966b883a558') in 0.148109 seconds
+  Import took 0.153263 seconds .
+
