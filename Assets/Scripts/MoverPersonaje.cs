@@ -10,6 +10,10 @@ public class MoverPersonaje : MonoBehaviour
 
     private Rigidbody2D rigidbody;      // Para física
 
+    public Proyectil proyectil;
+
+    private int direccion = 1;
+
 
     // METODOS
 
@@ -24,14 +28,32 @@ public class MoverPersonaje : MonoBehaviour
     void Update()
     {
         float movHorizontal = Input.GetAxis("Horizontal");   // [-1, 1]
+        if (movHorizontal < -0.001)
+        {
+            direccion = -1;
+        }
+        else if (movHorizontal > 0.001)
+        {
+            direccion = +1;
+        }
 
         rigidbody.velocity = new Vector2(movHorizontal * maxVelocidadX, rigidbody.velocity.y);
 
         // Salto (Después lo vamos a resolver con JUMP)
-        float movVertical = Input.GetAxis("Vertical");
-        if (movVertical > 0 && PruebaPiso.estaEnPiso)
+        //float movVertical = Input.GetAxis("Vertical");
+        //if (movVertical > 0 && PruebaPiso.estaEnPiso)
+        if (Input.GetButtonDown("Jump") && PruebaPiso.estaEnPiso)
         {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x,  maxVelocidadY);
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, maxVelocidadY);
+        }
+
+        // Dispara!!!
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Proyectil nuevo = Instantiate(proyectil); // Copia el proyectil y regresa un nuevo ojeto
+            nuevo.transform.position = gameObject.transform.position;
+            nuevo.CambiarDireccion(direccion);
+            nuevo.gameObject.SetActive(true);
         }
     }
 }
