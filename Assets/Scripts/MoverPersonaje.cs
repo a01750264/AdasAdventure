@@ -9,7 +9,7 @@ public class MoverPersonaje : MonoBehaviour
     public float maxVelocidadY = 7;    // Mov. Vertical ^
 
     private Rigidbody2D rigidbody;      // Para física
-
+    
     public Proyectil proyectil;
 
     private int direccion = 1;
@@ -50,7 +50,7 @@ public class MoverPersonaje : MonoBehaviour
         // Dispara!!!
         if (Input.GetButtonDown("Fire1"))
         {
-            Proyectil nuevo = Instantiate(proyectil); // Copia el proyectil y regresa un nuevo ojeto
+            Proyectil nuevo = Instantiate(proyectil); // Copia el proyectil y regresa un nuevo objeto
             nuevo.transform.position = gameObject.transform.position;
             nuevo.CambiarDireccion(direccion);
             nuevo.gameObject.SetActive(true);
