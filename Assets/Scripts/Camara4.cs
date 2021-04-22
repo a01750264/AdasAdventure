@@ -20,8 +20,8 @@ public class Camara4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Mathf.Clamp(personaje.transform.position.x, -0.3, 18.3f);
-        float y = Mathf.Clamp(personaje.transform.position.y, 0, 6.0f);
+        float x = Mathf.Clamp(personaje.transform.position.x, -0.3f, 18);
+        float y = Mathf.Clamp(personaje.transform.position.y, 0, 0);
         float z = transform.position.z;
         transform.position = new Vector3(x, y, z);
     }
