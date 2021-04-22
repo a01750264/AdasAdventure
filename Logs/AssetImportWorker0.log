@@ -305,3 +305,51 @@ Received Import Request.
 Start importing Assets/Scripts/MoverPersonaje.cs using Guid(7263c26c3910b74449812fb238424893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4477d1a14f7ee3a0e5b3bddd96be4685') in 0.019260 seconds
   Import took 0.030322 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 666.951400 seconds.
+  path: Assets/Anims/Anim villanito 2.anim
+  artifactKey: Guid(ddd3f280f5ebe7243bde79f942793d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Anim villanito 2.anim using Guid(ddd3f280f5ebe7243bde79f942793d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1bfe756fb79ba78cf6d6d75a64e1d89') in 0.020595 seconds
+  Import took 0.026291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.794119 seconds.
+  path: Assets/Anims/Anim villanito 1.anim
+  artifactKey: Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Anim villanito 1.anim using Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a193795b832b10f08c07c8532df547f0') in 0.006864 seconds
+  Import took 0.012918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.114140 seconds.
+  path: Assets/Anims/Villanito1_1.controller
+  artifactKey: Guid(fb458c5f680d7da46bc8dda2b43660a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Villanito1_1.controller using Guid(fb458c5f680d7da46bc8dda2b43660a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cece8a1c04b3551a87b8e44b6aa1436') in 0.011269 seconds
+  Import took 0.016928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.151575 seconds.
+  path: Assets/Anims/Villanito2_1.controller
+  artifactKey: Guid(9242f43eaba79174c89c3396a0d82417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Villanito2_1.controller using Guid(9242f43eaba79174c89c3396a0d82417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ed237795aafea9085cf085f555b38dc') in 0.007588 seconds
+  Import took 0.013394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.057788 seconds.
+  path: Assets/Anims/Villanito3_1.controller
+  artifactKey: Guid(7be84554950df2646a2325bf5c2cab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Villanito3_1.controller using Guid(7be84554950df2646a2325bf5c2cab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51056bec6c6e5b340c88b431bc130815') in 0.014403 seconds
+  Import took 0.020649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001730 seconds.
+  path: Assets/Anims/Villanito3_1.controller
+  artifactKey: Guid(7be84554950df2646a2325bf5c2cab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Villanito3_1.controller using Guid(7be84554950df2646a2325bf5c2cab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51056bec6c6e5b340c88b431bc130815') in 0.007244 seconds
+  Import took 0.013349 seconds .
+
