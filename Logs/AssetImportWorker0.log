@@ -353,3 +353,42 @@ Received Import Request.
 Start importing Assets/Anims/Villanito3_1.controller using Guid(7be84554950df2646a2325bf5c2cab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51056bec6c6e5b340c88b431bc130815') in 0.007244 seconds
   Import took 0.013349 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002909 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.849 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.23 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1801 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2287.
+Total: 2.883400 ms (FindLiveObjects: 0.298900 ms CreateObjectMapping: 0.112800 ms MarkObjects: 2.436200 ms  DeleteObjects: 0.032900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 272.271905 seconds.
+  path: Assets/Anims/Anim villanito 1.anim
+  artifactKey: Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Anim villanito 1.anim using Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbde76969353756ce213b145c969bd64') in 0.042475 seconds
+  Import took 0.050275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.045043 seconds.
+  path: Assets/Anims/Anim villanito 1.anim
+  artifactKey: Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Anims/Anim villanito 1.anim using Guid(124d472d9012c28418ec00914c19af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbde76969353756ce213b145c969bd64') in 0.007545 seconds
+  Import took 0.015222 seconds .
+
