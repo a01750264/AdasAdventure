@@ -13,17 +13,14 @@ public class PruebaPiso : MonoBehaviour
         if (other.gameObject.tag != "Moneda")
         {
             estaEnPiso = true;
-            //print("esta en piso");
         }
-
-
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        estaEnPiso = false;
-        //print("no esta en piso");
+        if (other.gameObject.tag == "plataforma")
+        {
+            estaEnPiso = false;
+        }
     }
-
-
 }
