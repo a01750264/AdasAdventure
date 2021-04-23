@@ -4,16 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/*
- * Detecta la colisión del enemigo con el personaje
- * Autor: Jeovani Hernández Bastida
- */
-
-public class Enemigo : MonoBehaviour
+public class Picos : MonoBehaviour
 {
-    //public AudioSource efectoEnemigo;
-    //public AudioSource efectoMuere;
-
+    // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -33,9 +26,8 @@ public class Enemigo : MonoBehaviour
                 
                 //efectoMuere.Play();
                 Destroy(other.gameObject, t: 0.3f);
-                SceneManager.LoadScene("EscenaMenu"); // Pierde, regresa al menú
+                SceneManager.LoadScene("EscenaMenu"); // Pierde, regresa al men�
             }
         }
     }
 }
-

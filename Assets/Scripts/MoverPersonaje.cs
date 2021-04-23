@@ -31,8 +31,7 @@ public class MoverPersonaje : MonoBehaviour
         if (movHorizontal < -0.001)
         {
             direccion = -1;
-        }
-        else if (movHorizontal > 0.001)
+        } else if (movHorizontal > 0.001)
         {
             direccion = +1;
         }

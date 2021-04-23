@@ -13,15 +13,7 @@ public class HUD : MonoBehaviour
 
     public Text textoMonedas;
 
-    public Slider slider;
-
     public static HUD instance;
-
-    public void CambiaSlider()
-    {
-        float valor = slider.value;
-        Time.timeScale = valor;
-    }
 
     private void Start()
     {
