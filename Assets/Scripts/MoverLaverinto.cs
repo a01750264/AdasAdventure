@@ -38,7 +38,10 @@ public class MoverLaverinto : MonoBehaviour
 
         // Salto (Después lo vamos a resolver con JUMP)
         float movVertical = Input.GetAxis("Vertical");
-
+        if (movVertical > 0)
+        {
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x,movVertical * maxVelocidadY );
+        }
 
         
     }
