@@ -18,6 +18,11 @@ public class IniciarSesion : MonoBehaviour
         Application.OpenURL("http://localhost:8080/jugador/agregarJugador");
     }
 
+    public void PaginaWeb()
+    {
+        Application.OpenURL("http://localhost:8080/jugador/iniciarSesion");
+    }
+
     public void InicioSesion()
     {
         StartCoroutine(IniciaSesion());
