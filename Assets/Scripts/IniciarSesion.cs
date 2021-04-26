@@ -10,29 +10,27 @@ public class IniciarSesion : MonoBehaviour
 {
     public Text resultado;
 
-    public Text textoUsuario;
-    public Text textoContra;
+    public InputField textoUsuario;
+    public InputField textoContra;
 
-    public GameObject botonJugar;
-
-    public void IniciarJuego()
+    public void Registrar()
     {
-        SceneManager.LoadScene("EscenaMapa");
+        Application.OpenURL("http://localhost:8080/jugador/agregarJugador");
     }
 
-    public void EscribirTextoPlano()
+    public void InicioSesion()
     {
-        StartCoroutine(SubirTextoPlano());
+        StartCoroutine(IniciaSesion());
     }
 
-    private IEnumerator SubirTextoPlano()
+    private IEnumerator IniciaSesion()
     {
         //Encapsular los datos que se suben a la red con el método POST
         WWWForm forma = new WWWForm();
         forma.AddField("usuarioUsuario", textoUsuario.text);
         forma.AddField("passwordUsuario", textoContra.text);
 
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/obtenerRegistros", forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/jugador/iniciarSesion", forma);
         yield return request.SendWebRequest();   //Regresa, ejecuta, espera...
 
         if (request.result == UnityWebRequest.Result.Success)  //200 OK
@@ -41,12 +39,7 @@ public class IniciarSesion : MonoBehaviour
             resultado.text = textoPlano;
             if (textoPlano == "Bienvenid@")
             {
-                botonJugar.SetActive(true);
-                PlayerPrefs.SetString("nombreUsuario", textoUsuario.text);
-                PlayerPrefs.Save();
-            } else
-            {
-                botonJugar.SetActive(false);
+                SceneManager.LoadScene("EscenaMenu");
             }
         }
         else

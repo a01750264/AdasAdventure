@@ -27,7 +27,7 @@ public class Menu : MonoBehaviour
         //print(message:"Click al boton");
 
         // Cambiar escena
-        SceneManager.LoadScene("EscenaJuego");
+        SceneManager.LoadScene("TheVirus");
     }
 
     public void Configuracion()
