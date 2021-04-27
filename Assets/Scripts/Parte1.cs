@@ -19,10 +19,20 @@ public class Parte1 : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            numero = 1;
+            //numero = 1;
+            if(Parte2.instance.objeto.activeSelf)
+            {
+                StartCoroutine("Espera");
+            }
         }
     }
-
+        IEnumerator Espera()
+    {
+        Parte2.instance.objeto.gameObject.SetActive(false);
+        yield return new WaitForSeconds(7);
+        numero = 0;
+        Parte2.instance.objeto.gameObject.SetActive(true);
     
+    }
 
 }

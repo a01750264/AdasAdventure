@@ -19,22 +19,9 @@ public class Parte6 : MonoBehaviour
     void Start()
     {
         objeto.gameObject.SetActive(true);
+       // print(objeto.gameObject.activeSelf);
     }
 
-
-    // Update is called once per frame
-    
-    void Update()
-    {
-        if(Parte5.instance.numero == 3)
-        {
-            objeto.gameObject.SetActive(false);       
-        }
-        else
-        {
-            objeto.gameObject.SetActive(true);
-        }
-    }
 
 }
 

@@ -10,8 +10,12 @@ public class Parte2 : MonoBehaviour
 {
 
     public GameObject objeto;
-    //       public float tiempoDestuir = 5f;
-    // Start is called before the first frame update
+    public static Parte2 instance;
+    private void Awake()
+    {
+        instance = this;        // ??????
+    }
+
     void Start()
     {
         objeto.gameObject.SetActive(true);
@@ -20,17 +24,5 @@ public class Parte2 : MonoBehaviour
 
     // Update is called once per frame
     
-    void Update()
-    {
-        if(Parte1.instance.numero == 1)
-        {
-            //tiempoDestuir -= Time.deltaTime;
-            objeto.gameObject.SetActive(false);
-            /*if(tiempoDestuir <= -5)
-            {
-                objeto.gameObject.SetActive(true);
-            }*/
-            
-        }
-    }
+
 }
