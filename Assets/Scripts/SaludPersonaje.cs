@@ -11,7 +11,7 @@ public class SaludPersonaje : MonoBehaviour
 {
     public int vidas = 3;
 
-    public int monedas = 0; // Recolectadas
+    public int vacunas = 0; // Recolectadas
 
     public static SaludPersonaje instance;
 

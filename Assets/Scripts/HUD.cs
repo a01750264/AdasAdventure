@@ -11,7 +11,7 @@ public class HUD : MonoBehaviour
     public Image imagen3;
     public static string fechaHoraInicioString;
 
-    public Text textoMonedas;
+    public Text textoVacunas;
 
     public static HUD instance;
 
@@ -21,9 +21,9 @@ public class HUD : MonoBehaviour
         print(fechaHoraInicioString);
         print(PlayerPrefs.GetString("nombreUsuario"));
         //Leer el valor desde las preferencias
-        int numeroMonedas = PlayerPrefs.GetInt("numeroMonedas", 0);
-        textoMonedas.text = numeroMonedas.ToString();
-        SaludPersonaje.instance.monedas = numeroMonedas;
+        int numeroVacunas = PlayerPrefs.GetInt("numeroVacunas", defaultValue:0);
+        textoVacunas.text = numeroVacunas.ToString();
+        SaludPersonaje.instance.vacunas = numeroVacunas;
     }
 
     /*
@@ -34,9 +34,9 @@ public class HUD : MonoBehaviour
         instance = this;
     }
     
-    public void ActualizarMonedas()
+    public void ActualizarVacunas()
     {
-        textoMonedas.text = SaludPersonaje.instance.monedas.ToString();
+        textoVacunas.text = SaludPersonaje.instance.vacunas.ToString();
     }
 
     public void ActualizarVidas()

@@ -10,7 +10,7 @@ using UnityEngine;
 public class Vacuna : MonoBehaviour
 {
     // Referencia al AudioSource
-    public AudioSource efectoMoneda;
+    //public AudioSource efectoMoneda;
 
     // Referencia al sistema de partículas
     public ParticleSystem hit;
@@ -25,7 +25,7 @@ public class Vacuna : MonoBehaviour
 
             // Recolectar
             // Reproducir un efecto de sonido
-            efectoMoneda.Play();
+            //efectoMoneda.Play();
             // Dejar de dibujar a moneda
             GetComponent<SpriteRenderer>().enabled = false;
             // Prender la explosión
@@ -35,8 +35,8 @@ public class Vacuna : MonoBehaviour
             Destroy(gameObject, 0.4f);
             
             // Contar monedas
-            SaludPersonaje.instance.monedas += 25;
-            HUD.instance.ActualizarMonedas();
+            SaludPersonaje.instance.vacunas += 25;
+            HUD.instance.ActualizarVacunas();
         }
     }
 }

@@ -21,7 +21,7 @@ public class Picos : MonoBehaviour
             if (SaludPersonaje.instance.vidas == 0)
             {
                 // Almacenar en Preferencias las Monedas recolectadas
-                PlayerPrefs.SetInt("numeroMonedas", SaludPersonaje.instance.monedas);
+                PlayerPrefs.SetInt("numeroVacunas", SaludPersonaje.instance.vacunas);
                 PlayerPrefs.Save();     // Inmediato guarda el valor
                 
                 //efectoMuere.Play();
