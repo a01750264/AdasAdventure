@@ -11,6 +11,7 @@ public class PuzzleBenja : MonoBehaviour
     public static float tiempoInicial;
     public static float tiempoTotal;
     private int nivel;
+    public static int competencia = 1;
     public GameObject panelGameOver;
     public GameObject panelVictory;
     public Button boton1;
@@ -94,9 +95,21 @@ public class PuzzleBenja : MonoBehaviour
         tiempoTotal = Time.time - tiempoInicial;
 
         WWWForm forma = new WWWForm();
-        forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
-        forma.AddField("progreso", nivel);
-        forma.AddField("tiempo", tiempoTotal.ToString());
+        if (tiempoTotal <= 180)
+        {
+            forma.AddField("competencia", competencia);
+            forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
+            forma.AddField("progreso", nivel);
+            forma.AddField("tiempo", tiempoTotal.ToString());
+            print(competencia);
+            print("competencia adquirida");
+            print(forma);
+        } else
+        {
+            forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
+            forma.AddField("progreso", nivel);
+            forma.AddField("tiempo", tiempoTotal.ToString());
+        }
 
         UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/agregarPartida", forma);
 
