@@ -7,7 +7,11 @@ using UnityEngine.Networking;
 
 /*
  * Detecta la colisión del enemigo con el personaje
- * Autor: Jeovani Hernández Bastida
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
  */
 
 public class Enemigo : MonoBehaviour
@@ -16,24 +20,19 @@ public class Enemigo : MonoBehaviour
     public static float tiempoTotal;
     public string pierde;
     public int nivel;
-    //public AudioSource efectoEnemigo;
-    //public AudioSource efectoMuere;
 
     void Start()
     {
-        tiempoInicial = Time.time;
+        tiempoInicial = Time.time;  // Sacamos el tiempo en el que inicio la escena
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)  // Detectamos colision entre jugador y enemigo
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // Reproducir el efecto 
-            //efectoEnemigo.Play();
-
             // Descontar una vida
             SaludPersonaje.instance.vidas--;
-            // Actualizar los corazones
+            // Actualizar los corazones de HUD
             HUD.instance.ActualizarVidas();
             if (SaludPersonaje.instance.vidas == 0)
             {
@@ -41,9 +40,8 @@ public class Enemigo : MonoBehaviour
                 PlayerPrefs.SetInt("numeroVacunas", SaludPersonaje.instance.vacunas);
                 PlayerPrefs.Save();     // Inmediato guarda el valor
                 
-                //efectoMuere.Play();
                 Destroy(other.gameObject, t: 0.3f);
-                SubirPartidaPuntos();
+                SubirPartidaPuntos();  // Crear una partida en la base de datos
                 SceneManager.LoadScene(pierde); // Pierde, regresa al menú
             }
         } else if (other.gameObject.CompareTag("disparo"))
@@ -54,12 +52,13 @@ public class Enemigo : MonoBehaviour
 
     public void SubirPartidaPuntos()
     {
-        StartCoroutine(CrearPartidaPuntos());
+        StartCoroutine(CrearPartidaPuntos());  // Corutina para crear una partida en la base de datos
     }
 
+    // Codigo para subir una partida a la base de datos por medio de un metodo POST
     public IEnumerator CrearPartidaPuntos()
     {
-        tiempoTotal = Time.time - tiempoInicial;
+        tiempoTotal = Time.time - tiempoInicial;  // Calculamos el tiempo en el que se manda a llamar este metodo para calcular el tiempo que paso el jugador en la escena
 
         WWWForm forma = new WWWForm();
         forma.AddField("puntuacion", SaludPersonaje.instance.vacunas.ToString());
@@ -67,7 +66,7 @@ public class Enemigo : MonoBehaviour
         forma.AddField("progreso", nivel);
         forma.AddField("tiempo", tiempoTotal.ToString());
 
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/agregarPartida", forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://3.141.197.134:8080/partida/agregarPartida", forma);
 
         yield return request.SendWebRequest();
 

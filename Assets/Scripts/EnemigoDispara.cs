@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Genera un disparo para que el enemigo pueda disparar cada 1.35 segundos
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 public class EnemigoDispara : MonoBehaviour
 {
     public GameObject proyectil;

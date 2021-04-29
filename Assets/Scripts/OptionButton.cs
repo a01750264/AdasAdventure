@@ -2,6 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * En este script se hacen las configuraciones de las opciones de las preguntas
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 [RequireComponent(typeof(Button))]
 [RequireComponent(typeof(Image))]
 public class OptionButton : MonoBehaviour

@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Script que permite agregar los botones y el texto de estos para las preguntas de los quizzes
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 public class QuizUI : MonoBehaviour
 {
     [SerializeField] private Text m_question = null;

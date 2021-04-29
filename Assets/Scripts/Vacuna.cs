@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Detecta la colisión de la moneda con el personaje
- * Autor: Roberto Mtz. Román
+ * Script que define el comportamiento de las vacunas (monedas)
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
  */
+
 public class Vacuna : MonoBehaviour
 {
-    // Referencia al AudioSource
-    //public AudioSource efectoMoneda;
-
     // Referencia al sistema de partículas
     public ParticleSystem hit;
 
@@ -24,8 +26,6 @@ public class Vacuna : MonoBehaviour
             hit.Play();
 
             // Recolectar
-            // Reproducir un efecto de sonido
-            //efectoMoneda.Play();
             // Dejar de dibujar a moneda
             GetComponent<SpriteRenderer>().enabled = false;
             // Prender la explosión

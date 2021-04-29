@@ -5,6 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
+/*
+ * Script para el funcionamiento de PuzzleBenja
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 public class PuzzleBenja : MonoBehaviour
 {
     private int correctas;
@@ -14,6 +23,8 @@ public class PuzzleBenja : MonoBehaviour
     public static int competencia = 1;
     public GameObject panelGameOver;
     public GameObject panelVictory;
+
+    // Todos los botones de PuzzleBenja
     public Button boton1;
     public Button boton2;
     public Button boton3;
@@ -45,21 +56,25 @@ public class PuzzleBenja : MonoBehaviour
         tiempoInicial = Time.time;
     }
 
+    // Boton para ir a EscenaMenu
     public void Menu()
     {
         SceneManager.LoadScene("EscenaMenu");
     }
 
+    // Boton para avanzar de nivel
     public void Avanzar()
     {
         SceneManager.LoadScene("HaciaLaCima");
     }
 
+    // Boton para intentar de nuevo
     public void Reset()
     {
         SceneManager.LoadScene("PuzzleBenja");
     }
 
+    // Revisamos si el boton presionado es correcto o incorrecto, en caso de ser incorrecto bajamos una vida
     public void RevisarRespuesta(Button boton)
     {
         if (boton.tag == "Incorrecto")
@@ -103,7 +118,7 @@ public class PuzzleBenja : MonoBehaviour
             forma.AddField("tiempo", tiempoTotal.ToString());
             print(competencia);
             print("competencia adquirida");
-            print(forma);
+            print(forma.data);
         } else
         {
             forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
@@ -111,7 +126,7 @@ public class PuzzleBenja : MonoBehaviour
             forma.AddField("tiempo", tiempoTotal.ToString());
         }
 
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/agregarPartida", forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://3.141.197.134:8080/partida/agregarPartida", forma);
 
         yield return request.SendWebRequest();
 
@@ -126,6 +141,7 @@ public class PuzzleBenja : MonoBehaviour
         }
     }
 
+    // Luego de que un boton se haga click, este se desactivara
     public void DeshabilitarBoton1()
     {
         boton1.interactable = false;

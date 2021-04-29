@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Parte1 : MonoBehaviour
+/*
+ * Detecta las colisiones con las cajas en el laberinto
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
 
+public class Parte1 : MonoBehaviour
 {
 
     public int numero;
@@ -12,7 +20,7 @@ public class Parte1 : MonoBehaviour
     
     private void Awake()
     {
-        instance = this;        // ??????
+        instance = this;
     }
     
     private void OnTriggerEnter2D(Collider2D other)

@@ -4,12 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;   // Para Image
 
+/*
+ * Script que muestra el HUD en la pantalla
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 public class HUD : MonoBehaviour
 {
     public Image imagen1;
     public Image imagen2;
     public Image imagen3;
-    public static string fechaHoraInicioString;
 
     public Text textoVacunas;
 
@@ -17,9 +25,6 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
-        fechaHoraInicioString = System.DateTime.Now.ToString();
-        print(fechaHoraInicioString);
-        print(PlayerPrefs.GetString("nombreUsuario"));
         //Leer el valor desde las preferencias
         int numeroVacunas = PlayerPrefs.GetInt("numeroVacunas", defaultValue:0);
         textoVacunas.text = numeroVacunas.ToString();
@@ -34,11 +39,13 @@ public class HUD : MonoBehaviour
         instance = this;
     }
     
+    // Puntuacion
     public void ActualizarVacunas()
     {
         textoVacunas.text = SaludPersonaje.instance.vacunas.ToString();
     }
 
+    // Vidas
     public void ActualizarVidas()
     {
         int vidas = SaludPersonaje.instance.vidas;

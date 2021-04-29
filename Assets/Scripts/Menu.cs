@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
- * Controla los metodos para atender los componentes del menú
- * Autores: 
- *          Eduardo Acosta Hernández
- *          Eric Alexis Castañeda Bravo
- *          Jeovani Hernández Bastida
- *          Jose Benjamín Ruíz García          
+ * Controla los botones para la EscenaMenu
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
  */
 
 public class Menu : MonoBehaviour
@@ -24,17 +24,11 @@ public class Menu : MonoBehaviour
     public void IniciarJuego()
     {
         // Cambiar escena
-        //print(message:"Click al boton");
-
-        // Cambiar escena
         SceneManager.LoadScene("Introduccion1");
     }
 
     public void Ayuda()
     {
-        // Cambiar escena
-        //print(message:"Click al boton");
-
         // Cambiar escena
         SceneManager.LoadScene("EscenaAyuda");
     }
@@ -42,14 +36,12 @@ public class Menu : MonoBehaviour
     public void Creditos()
     {
         // Cambiar escena
-        //print(message:"Click al boton");
-
-        // Cambiar escena
         SceneManager.LoadScene("EscenaCreditos");
     }
 
     public void Controles()
     {
+        // Cambiar escena
         SceneManager.LoadScene("EscenaControles");
     }
 }

@@ -5,11 +5,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
+/*
+ * Quitar una vida al jugador cuando se detecte una colision con picos o con disparos de enemigos
+ * Autores:
+ *      Jeovani Hernandez Bastida - a01749164
+ *      José Benjamin Ruiz Garcia - a01750246
+ *      Alexis Castaneda Bravo - a01750119
+ *      Eduardo Acosta Hernandez - a01375206
+ */
+
 public class Picos : MonoBehaviour
 {
     public static float tiempoInicial;
     public static float tiempoTotal;
     public int nivel;
+    public string pierde;
 
     void Start()
     {
@@ -37,7 +47,7 @@ public class Picos : MonoBehaviour
                 //efectoMuere.Play();
                 Destroy(other.gameObject, t: 0.3f);
                 SubirPartidaPuntos();
-                SceneManager.LoadScene("EscenaMenu"); // Pierde, regresa al menú
+                SceneManager.LoadScene(pierde); // Pierde, regresa al menú
             }
         }
     }
