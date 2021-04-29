@@ -14,6 +14,7 @@ public class Enemigo : MonoBehaviour
 {
     public static float tiempoInicial;
     public static float tiempoTotal;
+    public string pierde;
     public int nivel;
     //public AudioSource efectoEnemigo;
     //public AudioSource efectoMuere;
@@ -43,8 +44,11 @@ public class Enemigo : MonoBehaviour
                 //efectoMuere.Play();
                 Destroy(other.gameObject, t: 0.3f);
                 SubirPartidaPuntos();
-                SceneManager.LoadScene("EscenaMenu"); // Pierde, regresa al menú
+                SceneManager.LoadScene(pierde); // Pierde, regresa al menú
             }
+        } else if (other.gameObject.CompareTag("disparo"))
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -58,7 +62,7 @@ public class Enemigo : MonoBehaviour
         tiempoTotal = Time.time - tiempoInicial;
 
         WWWForm forma = new WWWForm();
-        forma.AddField("puntuacion", SaludPersonaje.instance.vidas.ToString());
+        forma.AddField("puntuacion", SaludPersonaje.instance.vacunas.ToString());
         forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
         forma.AddField("progreso", nivel);
         forma.AddField("tiempo", tiempoTotal.ToString());

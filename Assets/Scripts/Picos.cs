@@ -52,7 +52,7 @@ public class Picos : MonoBehaviour
         tiempoTotal = Time.time - tiempoInicial;
 
         WWWForm forma = new WWWForm();
-        forma.AddField("puntuacion", SaludPersonaje.instance.vidas.ToString());
+        forma.AddField("puntuacion", SaludPersonaje.instance.vacunas.ToString());
         forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
         forma.AddField("progreso", nivel);
         forma.AddField("tiempo", tiempoTotal.ToString());

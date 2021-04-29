@@ -47,4 +47,9 @@ public class Menu : MonoBehaviour
         // Cambiar escena
         SceneManager.LoadScene("EscenaCreditos");
     }
+
+    public void Controles()
+    {
+        SceneManager.LoadScene("EscenaControles");
+    }
 }

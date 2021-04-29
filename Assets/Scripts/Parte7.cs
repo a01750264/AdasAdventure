@@ -29,7 +29,7 @@ public class Parte7 : MonoBehaviour
         IEnumerator Espera()
     {
         Parte8.instance.objeto.gameObject.SetActive(false);
-        yield return new WaitForSeconds(17);
+        yield return new WaitForSeconds(25);
         numero = 0;
         Parte8.instance.objeto.gameObject.SetActive(true);
     

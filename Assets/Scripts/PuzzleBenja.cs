@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class PuzzleBenja : MonoBehaviour
 {
     private int correctas;
+    public static float tiempoInicial;
+    public static float tiempoTotal;
+    private int nivel;
     public GameObject panelGameOver;
     public GameObject panelVictory;
     public Button boton1;
@@ -35,6 +39,11 @@ public class PuzzleBenja : MonoBehaviour
     public Button boton24;
     public Button boton25;
 
+    void Start()
+    {
+        tiempoInicial = Time.time;
+    }
+
     public void Menu()
     {
         SceneManager.LoadScene("EscenaMenu");
@@ -42,7 +51,7 @@ public class PuzzleBenja : MonoBehaviour
 
     public void Avanzar()
     {
-        SceneManager.LoadScene("EscenaAlexis");
+        SceneManager.LoadScene("HaciaLaCima");
     }
 
     public void Reset()
@@ -58,6 +67,8 @@ public class PuzzleBenja : MonoBehaviour
             HUDBenja.instance.ActualizarVidas();
             if (SaludBenja.instance.vidas == 0)
             {
+                nivel = 2;
+                SubirPartida();
                 panelGameOver.SetActive(true);
             }
         }
@@ -66,8 +77,39 @@ public class PuzzleBenja : MonoBehaviour
             correctas++;
             if (correctas == 19)
             {
+                nivel = 3;
+                SubirPartida();
                 panelVictory.SetActive(true);
             }
+        }
+    }
+
+    public void SubirPartida()
+    {
+        StartCoroutine(CrearPartida());
+    }
+
+    public IEnumerator CrearPartida()
+    {
+        tiempoTotal = Time.time - tiempoInicial;
+
+        WWWForm forma = new WWWForm();
+        forma.AddField("usuario", PlayerPrefs.GetString("nombreUsuario"));
+        forma.AddField("progreso", nivel);
+        forma.AddField("tiempo", tiempoTotal.ToString());
+
+        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/agregarPartida", forma);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)  //200 OK
+        {
+            string textoPlano = request.downloadHandler.text;  //Datos descargados de la red
+            print(textoPlano);
+        }
+        else
+        {
+            print("Error en la descarga: ");
         }
     }
 

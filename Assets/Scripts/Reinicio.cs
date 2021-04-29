@@ -12,5 +12,4 @@ public class Reinicio : MonoBehaviour
     {
         SceneManager.LoadScene("Alexis2");
     }
-    
 }
