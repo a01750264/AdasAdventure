@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Script para probar si el jugador esta en el aire o en una plataforma
@@ -22,6 +23,13 @@ public class PruebaPiso : MonoBehaviour
         if (other.gameObject.tag != "Moneda")
         {
             estaEnPiso = true;
+        }
+
+        if (other.gameObject.tag == "muerte")
+        {
+            SaludPersonaje.instance.vidas = 0;
+            HUD.instance.ActualizarVidas();
+            SceneManager.LoadScene("EscenaMenu");
         }
     }
 
